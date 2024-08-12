@@ -1,0 +1,9 @@
+<script>
+    const redirectTo = window.location.pathname.replace('/routing-app', '');
+    if (redirectTo) {
+      window.location.href = `/${redirectTo}`;
+    } else {
+      window.location.href = '/';
+    }
+  </script>
+  
