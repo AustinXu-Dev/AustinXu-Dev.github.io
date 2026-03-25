@@ -1,67 +1,170 @@
-# Car Analysis
+# Austin Xu — Portfolio
 
-**Name**: Pyae Phyo Aung 
-**Student ID**: 6530069
+A production-ready, dark-themed developer portfolio built with Next.js App Router, Tailwind CSS, and Framer Motion.
 
-**Name**: Phyu Thandar Khin 
-**Student ID**: 6520271
+## Stack
 
-This project is a React-based web application for analyzing and managing car data. The application provides a dashboard to visualize car data by brands and models, a browsing section to view and favorite cars, and a highlighted section to keep track of favorite cars.
+- **Framework**: Next.js 14 (App Router, static export)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: GitHub Pages via GitHub Actions
 
-## Project Structure
+---
 
-- **Dashboard**: Displays various charts and statistics about cars by brand and model.
-- **Browse**: Allows users to view a list of cars, filter by brand, and add cars to their favorites.
-- **Highlighted**: Displays a list of favorited cars, with the ability to remove cars from favorites.
-
-## Features
-
-- **Persistent Highlights**: Favorite cars are stored in `localStorage` so that your selections persist even after a page reload.
-- **Responsive Design**: The application is responsive and can be used on various screen sizes.
-- **Pagination**: The browse section includes pagination to manage large lists of cars.
-
-## Screenshots
-
-### Dashboard Page
-
-- **Portion of Cars by Brand & Number of Cars by Brand**
-<img width="1399" alt="dashboard_page_pieChart_barChart" src="https://github.com/user-attachments/assets/7e115857-11d6-48e8-88a2-fa2807c95629">
-- **Number of Cars and Values by Brands and Models**
-<img width="1399" alt="dashboard_page_table" src="https://github.com/user-attachments/assets/db2f8ce0-ba28-46eb-939f-b55e1fe3d030">
-
-- **Collapsed State of the Table**
-<img width="1397" alt="dashboard_page_table_collapse" src="https://github.com/user-attachments/assets/08eff86d-564e-482f-aa96-5a335a7c432a">
-
-### Browse Page
-
-- **Browse All Cars**
-<img width="1395" alt="browse_page" src="https://github.com/user-attachments/assets/3aa2195c-f8aa-4f19-ac3d-bbd2e4aa3105">
-
-- **Browse Cars by Category**
-<img width="1402" alt="browse_page_category" src="https://github.com/user-attachments/assets/33cbdd02-8d9c-440f-bb6e-36ceabacc12c">
-
-- **Pagination in Browse**
-<img width="1403" alt="browse_page_panigation" src="https://github.com/user-attachments/assets/bb538d8e-2d20-4d6c-9c26-23819073842c">
-
-### Highlighted Page
-
-- **Highlighted Cars**
-<img width="1413" alt="highlight_page" src="https://github.com/user-attachments/assets/fd5873ad-4157-4474-99aa-d89df437dfcd">
-
-- **No Cars Highlighted State**
-<img width="1410" alt="no_highlight_state" src="https://github.com/user-attachments/assets/809f95fa-7bb9-4f28-aa3d-58223763255d">
-
-## Installation
+## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 14 or higher)
-- npm or yarn
+- Node.js 18+ and npm
 
-### Steps
+> **WSL users:** If `npm` resolves to the Windows version, install Node.js via nvm inside WSL:
+> ```bash
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+> source ~/.bashrc
+> nvm install 20
+> ```
 
-1. Clone the repository:
+### Install dependencies
 
 ```bash
-git clone https://github.com/your-username/car-analysis.git
-cd car-analysis
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Build & Export
+
+This site uses Next.js static export (`output: 'export'`), which generates a fully static site in the `out/` directory.
+
+```bash
+npm run build
+```
+
+The static output will be in `./out/`.
+
+---
+
+## Deploy to GitHub Pages
+
+### Option 1: GitHub Actions (Recommended)
+
+The workflow at `.github/workflows/deploy.yml` automatically builds and deploys on every push to `main`.
+
+**Setup steps:**
+
+1. Push this repo to GitHub
+2. Go to **Settings → Pages**
+3. Under **Source**, select **GitHub Actions**
+4. Push to `main` — the workflow deploys automatically
+
+Your site will be live at:
+```
+https://<your-username>.github.io/<repo-name>/
+```
+
+**If deploying to a subdirectory** (e.g., `/portfolio`), update the workflow env:
+```yaml
+env:
+  NEXT_PUBLIC_BASE_PATH: /portfolio
+```
+
+And update `next.config.js` if needed.
+
+### Option 2: Manual deployment
+
+```bash
+npm run build
+npx gh-pages -d out
+```
+
+---
+
+## Customization
+
+### Personal information
+
+Update the following files with your real details:
+
+| File | What to update |
+|------|---------------|
+| `components/Navbar.tsx` | GitHub URL |
+| `components/Hero.tsx` | GitHub URL, headline |
+| `components/Projects.tsx` | GitHub links, demo links |
+| `components/Footer.tsx` | Email address, GitHub URL |
+| `app/layout.tsx` | SEO metadata |
+
+### Resume
+
+Place your resume at `public/resume.pdf`. The "Download PDF" button in the footer links to this file.
+
+### Contact form
+
+The contact form in `components/Footer.tsx` submits to a placeholder handler. To make it functional:
+
+1. Sign up at [Formspree](https://formspree.io) (free tier available)
+2. Create a new form and copy your endpoint
+3. In `Footer.tsx`, replace the `handleSubmit` mock with a real fetch:
+
+```ts
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setSubmitting(true)
+  await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formState),
+  })
+  setSubmitting(false)
+  setSubmitted(true)
+}
+```
+
+---
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── globals.css         # Global styles, CSS variables
+│   ├── layout.tsx          # Root layout + metadata
+│   └── page.tsx            # Page composition
+├── components/
+│   ├── Navbar.tsx          # Fixed navigation
+│   ├── Hero.tsx            # Hero section
+│   ├── Projects.tsx        # Project cards grid
+│   ├── SystemsThinking.tsx # Philosophy / stat cards
+│   ├── Skills.tsx          # Skill groups
+│   ├── Blog.tsx            # Writing / articles
+│   └── Footer.tsx          # Contact form + links
+├── public/
+│   ├── resume.pdf          # Add your resume here
+│   └── .nojekyll
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Pages CI/CD
+├── next.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+---
+
+## Color Palette
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| Background | `#000000` | Page background |
+| Accent | `#00ff9f` | Primary highlight, CTAs |
+| Secondary | `#1f2937` | Card borders, subtle UI |
+| Card BG | `#0a0a0a` | Card backgrounds |
+| Muted | `#6b7280` | Secondary text |
