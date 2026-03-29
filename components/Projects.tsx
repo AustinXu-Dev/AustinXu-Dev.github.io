@@ -29,7 +29,7 @@ const projects: Project[] = [
       'Custom AVFoundation image capture & preprocessing',
     ],
     tech: ['SwiftUI', 'Firebase', 'ML Kit', 'AVFoundation', 'CoreML'],
-    github: 'https://github.com/austinxu',
+    github: 'https://github.com/AustinXu-Dev/SnapNGo.git',
     featured: true,
   },
   {
@@ -45,7 +45,7 @@ const projects: Project[] = [
       'Architected for large dataset scalability',
     ],
     tech: ['Laravel', 'PHP', 'iOS', 'REST APIs', 'MySQL'],
-    github: 'https://github.com/austinxu',
+    github: 'https://github.com/MCG-Care/MCG-Care-iOS.git',
     featured: true,
   },
   {
@@ -77,7 +77,7 @@ const projects: Project[] = [
       'Model performance benchmarking framework',
     ],
     tech: ['Python', 'XGBoost', 'Random Forest', 'Pandas', 'scikit-learn'],
-    github: 'https://github.com/austinxu',
+    github: 'https://github.com/AustinXu-Dev/options-mispricing-ml.git',
   },
   {
     id: 'cpu-scheduler',
@@ -92,7 +92,7 @@ const projects: Project[] = [
       'Algorithm performance comparison',
     ],
     tech: ['SwiftUI', 'Algorithms', 'Data Structures'],
-    github: 'https://github.com/austinxu',
+    github: 'https://github.com/AustinXu-Dev/cpu-scheduler.git',
     demo: '#',
   },
 ]
