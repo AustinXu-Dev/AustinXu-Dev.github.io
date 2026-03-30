@@ -49,7 +49,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'trading-analytics',
+    id: 'edgelog',
     category: 'Analytics System',
     title: 'Trading Analytics System',
     description:
@@ -57,11 +57,11 @@ const projects: Project[] = [
     highlights: [
       'Trade journaling with structured metadata',
       'Consistency scoring and pattern detection',
-      'Pair performance breakdown (GBP/USD, XAU/USD)',
+      'Pair Performance breakdown',
       'Data-driven UI for systematic decision review',
     ],
     tech: ['Next.js', 'TypeScript', 'Serverless', 'Tailwind CSS'],
-    github: 'https://github.com/austinxu',
+    github: 'https://github.com/AustinXu-Dev/edgelog',
     featured: true,
   },
   {
