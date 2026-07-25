@@ -56,8 +56,8 @@ export default function Hero() {
           variants={fadeUp}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6"
         >
-          <span className="text-white">Austin </span>
-          <span className="text-accent">Xu</span>
+          <span className="text-white">Pyae </span>
+          <span className="text-accent">Phyo Aung</span>
         </motion.h1>
 
         {/* Headline */}
@@ -101,7 +101,7 @@ export default function Hero() {
             <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
           </button>
           <a
-            href="https://github.com/austinxu"
+            href="https://github.com/AustinXu-Dev"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 border border-white/10 text-white/70 font-medium rounded-lg hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-200"
