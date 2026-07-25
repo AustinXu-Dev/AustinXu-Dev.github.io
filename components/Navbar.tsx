@@ -43,7 +43,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <div className="w-8 h-8 rounded bg-accent/10 border border-accent/20 flex items-center justify-center">
-            <span className="text-accent font-mono text-sm font-bold">Austin</span>
+            <span className="text-accent font-mono text-sm font-bold">AX</span>
           </div>
           <span className="text-white/80 font-medium group-hover:text-white transition-colors text-sm hidden sm:block">
             Pyae Phyo Aung

@@ -254,7 +254,7 @@ export default function Footer() {
             <div className="w-6 h-6 rounded bg-accent/10 border border-accent/20 flex items-center justify-center">
               <span className="text-accent font-mono text-xs font-bold">AX</span>
             </div>
-            <p className="text-white/20 text-sm">Austin Xu</p>
+            <p className="text-white/20 text-sm">Pyae Phyo Aung</p>
           </div>
           <p className="text-white/15 text-xs font-mono">
             Built with Next.js & Tailwind CSS · {new Date().getFullYear()}
